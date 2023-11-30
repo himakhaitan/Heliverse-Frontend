@@ -1,15 +1,19 @@
 import React from "react";
-import {TextField} from "@mui/material";
+import { TextField } from "@mui/material";
+import { updateName } from "../slicers/search";
+import { useDispatch, useSelector } from "react-redux";
 
-const Search = ({value, func, label}) => {
+const Search = ({ label }) => {
+  const dispatch = useDispatch();
+
   return (
     <TextField
       id="outlined-controlled"
       label={label}
       fullWidth={true}
-      value={value}
+      value={useSelector((state) => state.users.name)}
       onChange={(event) => {
-        func(event.target.value);
+        dispatch(updateName(event.target.value));
       }}
     />
   );

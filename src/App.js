@@ -5,8 +5,8 @@ import Results from "./sections/Results";
 function App() {
   return (
     <div className="main">
-      <Header/>
-      <Results/>
+      <Header />
+      {/* <Results /> */}
       <section className="footer"></section>
     </div>
   );

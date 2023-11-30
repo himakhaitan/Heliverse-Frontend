@@ -2,16 +2,29 @@ import { useState } from "react";
 import Search from "../components/Search";
 import Options from "../components/Options";
 
-const domainOptions = ["IT", "Sales", "UI Designing", "Finance", "Management", "Business Development"];
-const genderOptions = ["Male", "Female", "Agender", "Bigender", "Genderqueer", "Non-binary", "Genderfluid"];
+import { useSelector} from "react-redux";
+import { updateAvailable, updateDomain, updateGender } from "../slicers/search";
+
+const domainOptions = [
+  "IT",
+  "Sales",
+  "UI Designing",
+  "Finance",
+  "Management",
+  "Business Development",
+];
+const genderOptions = [
+  "Male",
+  "Female",
+  "Agender",
+  "Bigender",
+  "Genderqueer",
+  "Non-binary",
+  "Genderfluid",
+];
 const availabilityOptions = ["true", "false"];
 
 const Header = () => {
-  // const [search, setSearch] = useState("");
-
-  const [domain, setDomain] = useState("");
-  const [gender, setGender] = useState("");
-  const [availability, setAvailability] = useState("");
 
   return (
     <section className="header">
@@ -20,24 +33,24 @@ const Header = () => {
         id="domain"
         label="Domain"
         helper="Select Domain"
-        setFunc={setDomain}
-        value={domain}
+        setFunc={updateDomain}
+        value={useSelector((state) => state.users.domain)}
         options={domainOptions}
       />
       <Options
         id="gender"
         label="Gender"
         helper="Select Gender"
-        setFunc={setGender}
-        value={gender}
+        setFunc={updateGender}
+        value={useSelector((state) => state.users.gender)}
         options={genderOptions}
       />
       <Options
         id="availability"
         label="Availability"
         helper="Select Availablity"
-        value={availability}
-        setFunc={setAvailability}
+        value={useSelector((state) => state.users.available)}
+        setFunc={updateAvailable}
         options={availabilityOptions}
       />
     </section>

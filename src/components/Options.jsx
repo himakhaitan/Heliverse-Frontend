@@ -5,17 +5,18 @@ import {
   Select,
   FormHelperText,
 } from "@mui/material";
-
+import { useDispatch } from "react-redux";
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 const Options = ({ id, label, helper, value, setFunc, options }) => {
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    setFunc(event.target.value);
+    dispatch(setFunc(event.target.value));
   };
-  
+
   return (
     <FormControl sx={{ minWidth: 120 }}>
       <InputLabel id={id}>{label}</InputLabel>
