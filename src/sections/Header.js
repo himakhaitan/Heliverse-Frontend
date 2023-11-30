@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Search from "../components/Search";
 import Options from "../components/Options";
 

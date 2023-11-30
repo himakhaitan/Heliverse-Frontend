@@ -4,43 +4,28 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-const UserCard = ({
-  id,
-  first_name,
-  last_name,
-  email,
-  domain,
-  available,
-  avatar,
-  gender,
-}) => {
+const UserCard = ({user}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card key={user.id} sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={avatar}
-          alt={first_name}
+          image={user.avatar}
+          alt={user.first_name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {capitalizeFirstLetter(first_name) +
-              " " +
-              capitalizeFirstLetter(last_name)}
+            {user.first_name + " " + user.last_name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <strong>Email: </strong> {email}
+            <strong>Email: </strong> {user.email}
             <br />
-            <strong>Gender: </strong> {gender}
+            <strong>Gender: </strong> {user.gender}
             <br />
-            <strong>Domain: </strong> {domain}
+            <strong>Domain: </strong> {user.domain}
             <br />
-            <strong>Available: </strong> {available ? "Yes" : "No"}
+            <strong>Available: </strong> {user.available ? "Yes" : "No"}
           </Typography>
         </CardContent>
       </CardActionArea>

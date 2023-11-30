@@ -24,8 +24,8 @@ const Options = ({ id, label, helper, value, setFunc, options }) => {
         <MenuItem value="">
           <em>All</em>
         </MenuItem>
-        {options.map((option) => (
-          <MenuItem value={option}>{capitalizeFirstLetter(option)}</MenuItem>
+        {options.map((option, index) => (
+          <MenuItem key={index} value={option}>{capitalizeFirstLetter(option)}</MenuItem>
         ))}
       </Select>
       <FormHelperText>{helper}</FormHelperText>
