@@ -16,7 +16,7 @@ const UserCard = ({user}) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="100"
           image={user.avatar}
           alt={user.first_name}
         />

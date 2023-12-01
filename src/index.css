@@ -29,3 +29,14 @@ img {
     vertical-align: middle;
     border-style: none;
 }
+
+
+@media screen and (max-width: 480px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.5rem;
+        line-height: 1.2;
+        color: #333;
+        background-color: #fff;
+    }
+}

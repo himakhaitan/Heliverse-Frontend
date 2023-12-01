@@ -109,3 +109,23 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+@media screen and (max-width: 480px) {
+  .header {
+    margin: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 0.5rem;
+  }
+  .controller {
+    margin: 1rem;
+    padding: 0.5rem 0.3rem;
+  }
+  .results {
+    margin: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team {
+    padding: 0.3rem 0.3rem;
+  }
+
+}
