@@ -73,7 +73,7 @@ const Team = () => {
 
     console.log(team);
 
-    const res = await fetch("http://localhost:8000/api/team/", {
+    const res = await fetch("https://heliverse-pycj.onrender.com/api/team/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

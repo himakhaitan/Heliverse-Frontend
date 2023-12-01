@@ -14,7 +14,7 @@ const Results = () => {
   const page = useSelector((state) => state.users.page);
   const name = useSelector((state) => state.users.name);
   const [userData, setUserData] = useState([]);
-  const req_uri = `http://localhost:8000/api/users?domain=${domain}&gender=${gender}&available=${available}&page=${page}&name=${name}`;
+  const req_uri = `https://heliverse-pycj.onrender.com/api/users?domain=${domain}&gender=${gender}&available=${available}&page=${page}&name=${name}`;
   const main = async () => {
     const response = await axios.get(req_uri);
     setUserData(response.data);
