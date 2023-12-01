@@ -3,10 +3,16 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import { useDispatch } from "react-redux";
+import {addTeamMember} from "../slicers/search";
 
 const UserCard = ({user}) => {
+  const dispatch = useDispatch();
+  const handler = () => {
+    dispatch(addTeamMember(user));
+  };
   return (
-    <Card key={user.id} sx={{ maxWidth: 345 }}>
+    <Card key={user.id} sx={{ maxWidth: 345 }} onClick={handler}>
       <CardActionArea>
         <CardMedia
           component="img"
