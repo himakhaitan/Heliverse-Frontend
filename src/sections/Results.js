@@ -21,7 +21,7 @@ const Results = () => {
   };
   useEffect(() => {
     main();
-  });
+  }, [req_uri]);
 
   const decHandler = () => {
     if (page === 1) return;
